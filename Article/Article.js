@@ -100,52 +100,51 @@ const data = [
   
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.*/
 
+  const articles = document.querySelector('.articles');
 
-  function createArticle(title, date, p1, p2, p3){
-    const article = document.createElement('div');
-    const title = document.createElement('h2');
-    const date = document.createElement('p');
+
+  function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+    const article = document.createElement('div')
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
     const content1 = document.createElement('p');
-    const content2 = document.createElement('p2');
-    const content3 = document.createElement('p3');
+    const content2 = document.createElement('p');
+    const content3 = document.createElement('p');
     const button = document.createElement('span');
 
-    article.appendChild('title');
-    article.appendChild('date');
-    article.appendChild('content1');
-    article.appendChild('content2');
-    article.appendChild('content3');
-    article.appendChild('button');
+    //setup structure
+    article.appendChild(articleTitle);
+    article.appendChild(articleDate);
+    article.appendChild(content1);
+    article.appendChild(content2);
+    article.appendChild(content3);
+    article.appendChild(button);
 
+    //class names
     article.classList.add('article');
-    date.classList.add('date');
+    articleDate.classList.add('date');
     button.classList.add('expandButton');
 
-    title.textContent = title;
+    //text content
+    articleTitle.textContent = title;
     date.textContent = date;
-    content1.textContent = p1;
-    content2.textContent = p2;
-    content3.textContent = p3;
+    content1.textContent = firstParagraph;
+    content2.textContent = secondParagraph;
+    content3.textContent = thirdParagraph;
     button.textContent = '\u25bc';
 
+    //event listeners
     button.addEventListener('click', e =>{
       article.classList.toggle('article-open')
     })
 
-    // button.classList.toggle('article-open');
-    // article.classList.toggle('article-open');
-
     return article
-
   }
 
-data.forEach(item => {
-  article.appendChild(createArticle(item.title, item.date, item.p1, item.p2, item.p3))
-})
+  data.forEach(item => {
+    articles.appendChild(createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph))
+  })
 
-// cardData.forEach(item =>{
-//   container.appendChild(createCard(item.title, item.subtitle, item.content, item.imgsrc))
-// })
 
 
 /*  
