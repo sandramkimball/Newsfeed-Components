@@ -84,6 +84,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Warning: Sharknado Quotes Incoming',
+    date: 'Feb 8th, 2017',
+    firstParagraph: `Nova Clarke: They took my grandfather. That\'s why I really hate sharks.
+    
+    Matt:
+    Now I really hate sharks, too.`,
+
+    secondParagraph: `Baz Hogan: Storm's dying down.
+
+    Nova Clarke:
+    How can you tell?
+    
+    Baz Hogan:
+    Not as many sharks flying around.`,
+
+    thirdParagraph: `It must be that time of the month.`
   }
 ];
 

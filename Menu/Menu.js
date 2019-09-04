@@ -18,8 +18,6 @@ let menuItems = [
     </ul>
   </div>
 
-  The function takes an array as its only argument.
-
   Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
   Add those items to the <ul>
   Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
@@ -27,6 +25,42 @@ let menuItems = [
   Step 5: return the menu component.
   Step 6: add the menu component to the DOM.  
 */
+// `Students`, `Faculty`, `What's New`, `Tech Trends`, `Music`, `Log Out`
+
+const menuHeader = document.querySelector('.header');
+
+function menuComponent(arr){
+
+  //setup structure
+  const navMenu = document.createElement('div');
+  const navList = document.createElement('ul');
+
+  menuItems.forEach(item => {
+    let navItem = menuComponent(item);
+    navList.appendChild(navItem);
+  });
+
+  //append
+  menuHeader.appendChild(navMenu);
+  navMenu.appendChild(navList);
+
+  //classes
+  navMenu.classList.add('menu');
+
+  //add text content  
+
+  //listener
+  const menuButton = document.querySelector('.menu-button');
+  menuButton.addEventListener('click', e=>{
+    navMenu.classList.toggle('menu-open');
+  })
+
+  return navMenu
+}
+
+
+
+menuHeader.appendChild(menuComponent(menuItems));
 
 
 
