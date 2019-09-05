@@ -1,13 +1,6 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [
-  'Students',
-  'Faculty',
-  "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
-];
+
 
 /* 
   Step 1: Write a function that will create a menu component as seen below:
@@ -26,52 +19,54 @@ let menuItems = [
   Step 6: add the menu component to the DOM.  
 */
 
+let menuItems = [
+  'Students',
+  'Faculty',
+  "What's New",
+  'Tech Trends',
+  'Music',
+  'Log Out'
+];
+
 const menuHeader = document.querySelector('.header');
-
 function menuComponent(arr){
-
   //setup structure
   const navMenu = document.createElement('div');
   const navList = document.createElement('ul');
-  const navItem = document.createElement('li');
   
+  for (let i = 0; i < arr.length; i++) {
+    let navItem = document.createElement('li')
+    navItem.textContent = arr[i];
+    navList.appendChild(navItem);
+  }
   
+  menuHeader.appendChild(navList);
+    
   //append
   menuHeader.appendChild(navMenu);
   navMenu.appendChild(navList);
-  navList.appendChild(navItem);
 
   //classes
   navMenu.classList.add('menu');
 
-  //add text content  
-
   //listener
   const menuButton = document.querySelector('.menu-button');
-  menuButton.addEventListener('click', e=>{
+  menuButton.addEventListener('click', ()=>{
     navMenu.classList.toggle('menu-open');
   })
 
   return navMenu
 }
 
- menuItems.forEach(item => {
-  let navItem = menuComponent(item);
-  menuHeader.appendChild(navItem);
-});
-
-// menuHeader.appendChild(menuComponent(menuItems));
-
-
-// menuItems.forEach(item => {
+menuHeader.prepend(menuComponent(menuItems));
+//  menuItems.forEach(object => {
 //   let navItem = document.createElement('li');
-//   navList.appendChild(navItem);
+//   navItem.textContent = object[i];
+//   menuHeader.appendChild(navItem);
 // });
 
-// let navList = menuItems.map((item) => {
-//   let navItem = menuComponent(item);
-//   return navItem;
-// })
+// menuHeader.appendChild(menuComponent(menuItems));
+// const navItem = document.createElement('li');
 
 
 
