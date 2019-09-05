@@ -25,7 +25,6 @@ let menuItems = [
   Step 5: return the menu component.
   Step 6: add the menu component to the DOM.  
 */
-// `Students`, `Faculty`, `What's New`, `Tech Trends`, `Music`, `Log Out`
 
 const menuHeader = document.querySelector('.header');
 
@@ -34,15 +33,13 @@ function menuComponent(arr){
   //setup structure
   const navMenu = document.createElement('div');
   const navList = document.createElement('ul');
-
-  menuItems.forEach(item => {
-    let navItem = menuComponent(item);
-    navList.appendChild(navItem);
-  });
-
+  const navItem = document.createElement('li');
+  
+  
   //append
   menuHeader.appendChild(navMenu);
   navMenu.appendChild(navList);
+  navList.appendChild(navItem);
 
   //classes
   navMenu.classList.add('menu');
@@ -58,9 +55,24 @@ function menuComponent(arr){
   return navMenu
 }
 
+ menuItems.forEach(item => {
+  let navItem = menuComponent(item);
+  menuHeader.appendChild(navItem);
+});
+
+// menuHeader.appendChild(menuComponent(menuItems));
 
 
-menuHeader.appendChild(menuComponent(menuItems));
+// menuItems.forEach(item => {
+//   let navItem = document.createElement('li');
+//   navList.appendChild(navItem);
+// });
+
+// let navList = menuItems.map((item) => {
+//   let navItem = menuComponent(item);
+//   return navItem;
+// })
+
 
 
 
